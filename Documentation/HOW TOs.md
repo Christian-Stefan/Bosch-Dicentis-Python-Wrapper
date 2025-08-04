@@ -20,6 +20,9 @@ api.AuthenticateUserAsync() -> Verifies the credentials and consequently rejects
 > In other words, once authenticated, only a specific set of rights will be made available. 
 > That specific set of rights might INCLUDE/NOT INCLUDE actions (e.g., start/close a meeting) that fall outside of the wrapper functional scope.
 
+## How to retrieve the list of meetings
+Retrieving the list of meetings will usually return a so-called `sequence of UUIDs` (e.g., unique identifiers). Each identifier corresponds to a meeting that had/is/will be taken place and comes into practical application when meeting-specific actions/information are to be carried out (e.g., starting a specific meeting requires the meeting's unique identifier).
 
-
-
+```
+api.RequestMeetingsListAsync()
+```
